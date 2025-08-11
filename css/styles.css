@@ -96,8 +96,10 @@ img {
 .header-nav-list,
 .header-contacts-list {
   opacity: 0;
-  pointer-events: 0;
   position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
 }
 
 .header-menu-btn {
@@ -108,6 +110,7 @@ img {
 }
 
 .header-menu-ico {
+  fill: #2f2f37;
 }
 
 /* hero section */
@@ -183,7 +186,6 @@ img {
 .benefits-item-icon-bg,
 .benefits-item-icon {
   opacity: 0;
-  pointer-events: 0;
   position: absolute;
 }
 
@@ -740,12 +742,6 @@ img {
     color: #404bbf;
   }
 
-  .header-menu-btn {
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-  }
-
   .header-contacts-list {
     display: flex;
     align-items: center;
@@ -766,6 +762,14 @@ img {
     color: #434455;
 
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .header-menu-btn {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   /* hero */
@@ -803,7 +807,6 @@ img {
   .benefits-item-icon-bg,
   .benefits-item-icon {
     opacity: 1;
-    pointer-events: auto;
   }
 
   .benefits-item-icon-bg {
