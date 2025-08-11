@@ -365,7 +365,8 @@ img {
 }
 
 .footer-logo {
-  display: inline-block;
+  display: block;
+  text-align: center;
   margin-bottom: 16px;
 }
 
@@ -382,6 +383,7 @@ img {
 
 .footer-socials {
   margin-bottom: 72px;
+  align-self: center;
 }
 
 .footer-socials-media,
@@ -444,6 +446,7 @@ img {
   gap: 16px;
 
   min-width: 165px;
+  align-self: center;
   height: 40px;
 
   text-align: start;
@@ -928,12 +931,17 @@ img {
     flex-direction: row;
   }
 
+  .footer-logo {
+    text-align: start;
+  }
+
   .logo-n-slogan {
     margin: 0 120px 0 0;
   }
 
   .footer-socials {
     margin: 0 80px 0 0;
+    align-self: auto;
   }
 
   .footer-socials-media,
