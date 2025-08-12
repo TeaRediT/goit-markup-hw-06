@@ -21,6 +21,10 @@ a {
   font-style: normal;
 }
 
+input {
+  outline: none;
+}
+
 ul,
 ol {
   list-style-type: none;
@@ -118,14 +122,16 @@ img {
 .header-nav-link:hover,
 .header-nav-link:focus,
 .header-contacts-link:hover,
-.header-contacts-link:focus {
+.header-contacts-link:focus,
+.mob-menu-contacts-link.header-contacts-link.current {
   color: #404bbf;
 }
 
 .header-contacts-link {
   display: block;
-  padding: 24px 0;
-  line-height: 1.5;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
   letter-spacing: 0.02em;
   color: #434455;
 
@@ -153,7 +159,7 @@ img {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/hero-section/hero-img.jpg);
+    url(../images/hero-section/mob/hero-img.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -166,7 +172,7 @@ img {
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url(../images/hero-section/hero-img@2x.jpg);
+      url(../images/hero-section/mob/hero-img@2x.jpg);
   }
 }
 
@@ -722,25 +728,28 @@ img {
 /* mob menu */
 
 .mob-menu {
-  opacity: 1;
-  visibility: hidden;
   background-color: #fff;
-  padding: 72px 24px 40px 16px;
-  width: auto;
-  left: 50%;
-  transform: translate(-50%);
+}
+
+.mob-menu-container {
+  position: relative;
+  padding-top: 72px;
+  padding-bottom: 40px;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  width: 100%;
 }
 
 .mob-menu-x-btn {
   border-color: #2e2f42;
   background-color: #fdfdff;
 }
+
 .mob-menu-nav {
-  margin-bottom: 168px;
+  margin-bottom: auto;
 }
+
 .mob-menu-list {
   display: flex;
   flex-direction: column;
@@ -762,16 +771,10 @@ img {
 
 .mob-menu-contacts-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 24px;
 }
 
-.mob-menu-contacts-link {
-  padding: 0;
-  font-size: 20px;
-  line-height: 1.2;
-  color: #434455;
-}
 .mob-socials-list {
   display: flex;
   gap: 40px;
@@ -787,14 +790,17 @@ img {
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
-    padding: 0 16px;
   }
 
   /* header */
 
   .header-logo {
     padding: 24px 0;
-    margin-right: 120px;
+  }
+
+  .header-nav {
+    width: 496px;
+    justify-content: space-between;
   }
 
   .header-nav-list,
@@ -807,7 +813,6 @@ img {
     display: flex;
     align-items: center;
     gap: 40px;
-    margin-right: 122px;
   }
 
   .header-nav-link::after {
@@ -840,17 +845,10 @@ img {
   }
 
   .header-contacts-link {
-    padding: 0;
+    font-weight: 400;
     font-size: 12px;
-    line-height: 1.17;
-  }
-
-  .header-contacts-item:first-child .header-contacts-link {
-    padding-top: 16px;
-  }
-
-  .header-contacts-item:last-child .header-contacts-link {
-    padding-bottom: 16px;
+    line-height: 1.16667;
+    letter-spacing: 0.04em;
   }
 
   .header-menu-btn {
@@ -865,6 +863,21 @@ img {
   .hero-section {
     padding: 112px 0;
     max-width: 768px;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero-section/tablet/hero-img.jpg);
+  }
+
+  @media screen and (min-resolution: 2x) {
+    .hero-section {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/hero-section/tablet/hero-img@2x.jpg);
+    }
   }
 
   .hero-title {
@@ -930,10 +943,11 @@ img {
   .footer-items {
     flex-direction: row;
     flex-wrap: wrap;
+    padding: 0 108px;
   }
 
   .logo-n-slogan {
-    margin: 0 24px 72px 92px;
+    margin: 0 24px 72px 0;
   }
 
   .footer-socials {
@@ -952,11 +966,6 @@ img {
     gap: 24px;
   }
 
-  .footer-subscribe,
-  .subscribe-form {
-    margin-left: 92px;
-  }
-
   .subscribe-input {
     width: 264px;
   }
@@ -971,6 +980,12 @@ img {
 
   .modal-form-input {
     padding-left: 38px;
+  }
+
+  /* mob menu */
+
+  .mob-menu {
+    display: none;
   }
 }
 
@@ -988,9 +1003,8 @@ img {
     margin-right: 76px;
   }
 
-  .header-contacts-item:first-child .header-contacts-link,
-  .header-contacts-item:last-child .header-contacts-link {
-    padding: 24px 0;
+  .header-nav {
+    width: auto;
   }
 
   .header-contacts-list {
@@ -1000,7 +1014,9 @@ img {
   }
 
   .header-contacts-link {
-    padding: 24px 0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
   }
 
   .header-contacts {
@@ -1013,6 +1029,21 @@ img {
   .hero-section {
     padding: 188px 0;
     max-width: 1440px;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero-section/hero-img.jpg);
+  }
+
+  @media screen and (min-resolution: 2x) {
+    .hero-section {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/hero-section/hero-img@2x.jpg);
+    }
   }
 
   .hero-btn {
@@ -1159,6 +1190,7 @@ img {
 
   .footer-items {
     flex-wrap: nowrap;
+    padding: auto;
   }
 
   .logo-n-slogan {
@@ -1169,12 +1201,9 @@ img {
     margin: 0 80px 0 0;
   }
 
-  .footer-subscribe,
-  .subscribe-form {
-    margin-left: 0;
+  .subscribe-input {
+    border-color: #fff;
   }
-
-  .subscribe-input,
   .subscribe-input::placeholder {
     color: #fff;
   }
