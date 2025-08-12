@@ -71,9 +71,6 @@ img {
   align-items: center;
 }
 
-@media screen and (min-width: 768px) {
-}
-
 .logo {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
@@ -85,8 +82,7 @@ img {
 }
 
 .header-logo {
-  padding: 24px 0;
-  margin-right: 76px;
+  padding: 16px 0;
 }
 
 .header-logo-part {
@@ -227,6 +223,10 @@ img {
   width: 100%;
 }
 
+.benefits-tablet-br {
+  display: none;
+}
+
 .benefits-item-icon-bg,
 .benefits-item-icon {
   visibility: hidden;
@@ -244,8 +244,7 @@ img {
 }
 
 .benefits-item-text {
-  font-weight: 400;
-  font-size: 16px;
+  font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
@@ -356,7 +355,7 @@ img {
   margin-bottom: 72px;
 }
 
-.porftolio-list {
+.portfolio-list {
   display: flex;
   flex-direction: column;
   gap: 48px;
@@ -467,7 +466,7 @@ img {
   line-height: 2;
   letter-spacing: 0.04em;
   background-color: inherit;
-  border: 1px solid #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   width: 288px;
   height: 40px;
@@ -479,7 +478,7 @@ img {
 }
 
 .subscribe-input::placeholder {
-  color: inherit;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .subscribe-btn {
@@ -783,18 +782,19 @@ img {
   visibility: visible;
 }
 
-/* desktop */
+/* tablet */
 
-/* header */
-
-@media screen and (min-width: 1158px) {
+@media screen and (min-width: 768px) {
   .container {
-    max-width: 1158px;
-    padding: 0 15px;
+    max-width: 768px;
+    padding: 0 16px;
   }
 
+  /* header */
+
   .header-logo {
-    padding: 16px 0;
+    padding: 24px 0;
+    margin-right: 120px;
   }
 
   .header-nav-list,
@@ -807,6 +807,7 @@ img {
     display: flex;
     align-items: center;
     gap: 40px;
+    margin-right: 122px;
   }
 
   .header-nav-link::after {
@@ -833,18 +834,27 @@ img {
 
   .header-contacts-list {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 12px;
   }
 
-  .header-contacts {
-    font-style: normal;
-    margin-left: auto;
+  .header-contacts-link {
+    padding: 0;
+    font-size: 12px;
+    line-height: 1.17;
+  }
+
+  .header-contacts-item:first-child .header-contacts-link {
+    padding-top: 16px;
+  }
+
+  .header-contacts-item:last-child .header-contacts-link {
+    padding-bottom: 16px;
   }
 
   .header-menu-btn {
-    opacity: 0;
-    pointer-events: none;
+    visibility: hidden;
     position: absolute;
     top: 0;
     left: 0;
@@ -853,14 +863,156 @@ img {
   /* hero */
 
   .hero-section {
-    padding: 188px 0;
-    max-width: 1440px;
+    padding: 112px 0;
+    max-width: 768px;
   }
 
   .hero-title {
     max-width: 496px;
     font-size: 56px;
     line-height: 1.07;
+  }
+
+  .hero-btn {
+    margin: 36px auto 0 auto;
+  }
+
+  /* benefits */
+
+  .benefits-list {
+    flex-direction: row;
+    row-gap: 72px;
+    column-gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .benefits-item {
+    width: calc((100% - 24px) / 2);
+  }
+
+  .benefits-tablet-br {
+    display: inline;
+  }
+
+  .benefits-item-title {
+    text-align: start;
+  }
+
+  /* team */
+
+  .team-list {
+    flex-direction: row;
+    row-gap: 64px;
+    column-gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .team-item {
+    width: 264px;
+  }
+
+  /* portfolio */
+
+  .portfolio-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 72px;
+    column-gap: 24px;
+  }
+
+  .porftolio-item {
+    width: calc((100% - 24px) / 2);
+  }
+
+  /* footer */
+
+  .footer-items {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .logo-n-slogan {
+    margin: 0 24px 72px 92px;
+  }
+
+  .footer-socials {
+    margin: 0;
+    align-self: normal;
+  }
+
+  .footer-socials-media,
+  .footer-subscribe,
+  .footer-logo {
+    text-align: start;
+  }
+
+  .subscribe-form {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .footer-subscribe,
+  .subscribe-form {
+    margin-left: 92px;
+  }
+
+  .subscribe-input {
+    width: 264px;
+  }
+
+  /* modal form */
+
+  .modal {
+    width: 408px;
+    min-height: 584px;
+    padding: 72px 24px 24px 24px;
+  }
+
+  .modal-form-input {
+    padding-left: 38px;
+  }
+}
+
+/* desktop */
+
+@media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding: 0 15px;
+  }
+
+  /* header */
+
+  .header-logo {
+    margin-right: 76px;
+  }
+
+  .header-contacts-item:first-child .header-contacts-link,
+  .header-contacts-item:last-child .header-contacts-link {
+    padding: 24px 0;
+  }
+
+  .header-contacts-list {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .header-contacts-link {
+    padding: 24px 0;
+  }
+
+  .header-contacts {
+    font-style: normal;
+    margin-left: auto;
+  }
+
+  /* hero */
+
+  .hero-section {
+    padding: 188px 0;
+    max-width: 1440px;
   }
 
   .hero-btn {
@@ -872,14 +1024,18 @@ img {
   .benefits-section {
     padding: 120px 0;
   }
+
   .benefits-list {
-    display: flex;
-    flex-direction: row;
     gap: 24px;
+    flex-wrap: nowrap;
   }
 
   .benefits-item {
     width: calc((100% - 72px) / 4);
+  }
+
+  .benefits-tablet-br {
+    display: none;
   }
 
   .benefits-item-icon-bg,
@@ -913,7 +1069,10 @@ img {
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
-    text-align: start;
+  }
+
+  .benefits-item-text {
+    font-weight: 400;
   }
 
   /* team */
@@ -924,8 +1083,9 @@ img {
 
   .team-list {
     display: flex;
-    flex-direction: row;
     gap: 24px;
+    flex-wrap: nowrap;
+    justify-content: normal;
   }
 
   .team-item {
@@ -938,11 +1098,8 @@ img {
     padding: 120px 0;
   }
 
-  .porftolio-list {
-    flex-wrap: wrap;
-    flex-direction: row;
+  .portfolio-list {
     row-gap: 48px;
-    column-gap: 24px;
   }
 
   .porftolio-item {
@@ -958,7 +1115,6 @@ img {
   }
 
   .portfolio-item-img-overlay {
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -1002,11 +1158,7 @@ img {
   }
 
   .footer-items {
-    flex-direction: row;
-  }
-
-  .footer-logo {
-    text-align: start;
+    flex-wrap: nowrap;
   }
 
   .logo-n-slogan {
@@ -1015,33 +1167,15 @@ img {
 
   .footer-socials {
     margin: 0 80px 0 0;
-    align-self: auto;
   }
 
-  .footer-socials-media,
-  .footer-subscribe {
-    text-align: start;
-  }
-
+  .footer-subscribe,
   .subscribe-form {
-    flex-direction: row;
-    gap: 24px;
+    margin-left: 0;
   }
 
-  .subscribe-input {
-    width: 264px;
-    height: 40px;
-  }
-
-  /* modal form */
-
-  .modal {
-    width: 408px;
-    min-height: 584px;
-    padding: 72px 24px 24px 24px;
-  }
-
-  .modal-form-input {
-    padding-left: 38px;
+  .subscribe-input,
+  .subscribe-input::placeholder {
+    color: #fff;
   }
 }
