@@ -100,10 +100,7 @@ img {
 
 .header-nav-list,
 .header-contacts-list {
-  visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: none;
 }
 
 .header-nav-link {
@@ -229,8 +226,7 @@ img {
 
 .benefits-item-icon-bg,
 .benefits-item-icon {
-  visibility: hidden;
-  position: absolute;
+  display: none;
 }
 
 .benefits-item-title {
@@ -375,8 +371,7 @@ img {
 }
 
 .portfolio-item-img-overlay {
-  position: absolute;
-  visibility: hidden;
+  display: none;
 }
 
 .portfolio-item-title {
@@ -794,12 +789,6 @@ img {
     justify-content: space-between;
   }
 
-  .header-nav-list,
-  .header-contacts-list {
-    visibility: visible;
-    position: static;
-  }
-
   .header-nav-list {
     display: flex;
     align-items: center;
@@ -843,10 +832,7 @@ img {
   }
 
   .header-menu-btn {
-    visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: none;
   }
 
   /* hero */
@@ -1047,11 +1033,6 @@ img {
     display: none;
   }
 
-  .benefits-item-icon-bg,
-  .benefits-item-icon {
-    visibility: visible;
-  }
-
   .benefits-item-icon-bg {
     display: flex;
     align-items: center;
@@ -1068,6 +1049,7 @@ img {
   }
 
   .benefits-item-icon {
+    display: block;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1124,6 +1106,7 @@ img {
   }
 
   .portfolio-item-img-overlay {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -1139,7 +1122,7 @@ img {
     transform: translateY(100%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    visibility: visible;
+    display: block;
   }
 
   .portfolio-item-img-overlay-text {
