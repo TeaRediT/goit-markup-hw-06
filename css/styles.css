@@ -21,8 +21,9 @@ a {
   font-style: normal;
 }
 
-input {
-  outline: none;
+input,
+textarea {
+  outline: transparent;
 }
 
 ul,
@@ -159,21 +160,14 @@ img {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/hero-section/mob/hero-img.jpg);
+    image-set(
+      url(../images/hero-section/mob/hero-img.jpg) 1x,
+      url(../images/hero-section/mob/hero-img@2x.jpg) 2x
+    );
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   padding: 72px 0;
-}
-
-@media screen and (min-resolution: 2x) {
-  .hero-section {
-    background-image: linear-gradient(
-        rgba(46, 47, 66, 0.7),
-        rgba(46, 47, 66, 0.7)
-      ),
-      url(../images/hero-section/mob/hero-img@2x.jpg);
-  }
 }
 
 .hero-title {
@@ -607,7 +601,6 @@ img {
 .modal-form-label {
   display: block;
   margin-bottom: 4px;
-
   font-size: 12px;
   line-height: 1.67;
   letter-spacing: 0.04em;
@@ -623,7 +616,6 @@ img {
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   background-color: transparent;
-  outline: transparent;
 
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -678,7 +670,6 @@ img {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
 }
@@ -867,17 +858,10 @@ img {
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url(../images/hero-section/tablet/hero-img.jpg);
-  }
-
-  @media screen and (min-resolution: 2x) {
-    .hero-section {
-      background-image: linear-gradient(
-          rgba(46, 47, 66, 0.7),
-          rgba(46, 47, 66, 0.7)
-        ),
-        url(../images/hero-section/tablet/hero-img@2x.jpg);
-    }
+      image-set(
+        url(../images/hero-section/tablet/hero-img.jpg) 1x,
+        url(../images/hero-section/tablet/hero-img@2x.jpg) 2x
+      );
   }
 
   .hero-title {
@@ -1033,17 +1017,11 @@ img {
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url(../images/hero-section/hero-img.jpg);
-  }
-
-  @media screen and (min-resolution: 2x) {
-    .hero-section {
-      background-image: linear-gradient(
-          rgba(46, 47, 66, 0.7),
-          rgba(46, 47, 66, 0.7)
-        ),
-        url(../images/hero-section/hero-img@2x.jpg);
-    }
+      image-set(
+          url(../images/hero-section/hero-img.jpg) 1x,
+          url(../images/hero-section/hero-img@2x.jpg) 2x
+        )
+        url(../images/hero-section/hero-img.jpg);
   }
 
   .hero-btn {
